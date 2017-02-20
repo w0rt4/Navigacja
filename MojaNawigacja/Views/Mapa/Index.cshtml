@@ -1,0 +1,66 @@
+﻿@model MojaNawigacja.Models.Adresy
+@{
+    ViewBag.Title = "trasa";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script>
+    $(document).ready(function () {
+        wyswietlMape("mapa");
+        wyznaczTrase('Text1' , 'Text2');
+    }
+    );
+</script>
+
+<h2>@ViewBag.Title</h2>
+
+@*@<div>
+    <p>
+        @Html.Label("Miejsce wyjazdu: ")
+        @Html.TextBox("MiejsceWyjazdu", null, new {  id = "Text1"})
+    </p>
+
+    <p>
+        @Html.Label("Miejsce docelowe: ")
+        @Html.TextBox("MiejsceDocelowe", null, new { id = "Text2" })
+    </p>
+
+    <p>
+        <input id="Button1" type="button" value="wyznacz trasę"
+               onclick="wyznaczTrase('Text1' , 'Text2');" />
+    </p>
+   <p>
+       <input id="Button2" type="button" value="pokaż mapę"
+              onclick="wyswietlMape('mapa');" />
+   </p>
+</div>
+
+<div id="mapa" style="position:relative; width:400px; height:400px;">
+
+</div>*@
+@using (Html.BeginForm()){
+    @Html.ValidationSummary("Popraw poniższe błędy i spróbuj ponownie")
+    <div>
+        <div>
+            @Html.LabelFor(m => m.MiejsceWyjazdu)
+        </div>
+        <div >
+            @Html.TextBoxFor(m => m.MiejsceWyjazdu, new { id = "Text1" })
+            @Html.ValidationMessageFor(m => m.MiejsceWyjazdu)
+       
+            </div>
+        <div >
+            @Html.LabelFor(m => m.MiejsceDocelowe)
+        </div>
+        <div >
+            @Html.TextBoxFor(m => m.MiejsceDocelowe, new { id = "Text2" })
+            @Html.ValidationMessageFor(m => m.MiejsceDocelowe)
+        </div>
+        <p>
+            <input type="submit" id="Button1" value="Wyznacz trase" />
+        </p>
+    </div>
+    <div id="mapa" style="position:relative; width:400px; height:400px;">
+
+    </div>
+}

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NawigacjaDBModelStoreContainer" CdmEntityContainer="NawigacjaDBEntities">
+    <EntitySetMapping Name="Adresy">
+      <EntityTypeMapping TypeName="NawigacjaDBModel.Adresy">
+        <MappingFragment StoreEntitySet="Adresy">
+          <ScalarProperty Name="IdTrasy" ColumnName="IdTrasy" />
+          <ScalarProperty Name="MiejsceWyjazdu" ColumnName="MiejsceWyjazdu" />
+          <ScalarProperty Name="MiejsceDocelowe" ColumnName="MiejsceDocelowe" />
+          <ScalarProperty Name="DataDodania" ColumnName="DataDodania" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
